@@ -15,7 +15,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Esha::VERSION
 
-  gem.add_dependency "httparty"
+  gem.add_dependency "httparty", '~> 0.8.2'
   gem.add_development_dependency "rspec"
-  gem.add_development_dependency "rspec-rails"
 end
