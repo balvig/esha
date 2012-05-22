@@ -24,5 +24,5 @@ Esha::Api.key = '....' # Get an api key from http://developer.esha.com/
 pizza = Esha::Food.search('pizza').first
 pizza.description # => 'Pizza, hand tossed, cheese, 12"'
 pizza.product # => "Domino's Pizza"
-pizza.nutrients.first.summary => "1 Piece -> 187.255 kcal Calories"
+pizza.nutrients.first.summary # => "1 Piece -> 187.255 kcal Calories"
 ```
