@@ -1,6 +1,6 @@
 # Esha
 
-TODO: Write a gem description
+Esha is a simple wrapper that makes the ESHA nutrition api a little easier to work with.
 
 ## Installation
 
@@ -8,22 +8,21 @@ Add this line to your application's Gemfile:
 
     gem 'esha'
 
-And then execute:
+And then run:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself:
 
     $ gem install esha
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Esha::Api.key = '....' # Get an api key from http://developer.esha.com/
 
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+pizza = Esha::Food.search('pizza').first
+pizza.description # => 'Pizza, hand tossed, cheese, 12"'
+pizza.product # => "Domino's Pizza"
+pizza.nutrients.first.summary => "1 Piece -> 187.255 kcal Calories"
+```
