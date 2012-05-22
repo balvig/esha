@@ -4,9 +4,9 @@ require File.expand_path('../lib/esha/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Jens Balvig"]
   gem.email         = ["jens@balvig.com"]
-  gem.description   = %q{Simple wrapper for ESHA nutrition database}
+  gem.description   = %q{Esha is a simple wrapper that makes the ESHA nutrition api a little easier to work with.}
   gem.summary       = %q{Simple wrapper for ESHA nutrition database}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/balvig/esha"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
