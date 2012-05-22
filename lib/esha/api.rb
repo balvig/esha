@@ -4,13 +4,17 @@ module Esha
     include HTTParty
 
     base_uri 'api.esha.com'
-    default_params apikey: # YOUR KEY HERE
     format :json
 
-    def self.search(name)
-      result = get("/foods", query: { query: name})
-      result['items'].map do |r|
-        Food.new(r)
+    def self.key=(key)
+      default_params apikey: key
+    end
+
+    def method_missing(method, *args)
+      if @attributes.keys.include?(method.to_s)
+        @attributes[method.to_s]
+      else
+        super
       end
     end
 

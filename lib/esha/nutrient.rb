@@ -18,12 +18,5 @@ module Esha
       "#{quantity} #{food_unit} -> #{value} #{name}"
     end
 
-    def method_missing(method, *args)
-      if @attributes.keys.include?(method.to_s)
-        @attributes[method.to_s]
-      else
-        super
-      end
-    end
   end
 end

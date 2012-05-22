@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe Esha::Food do
+  describe '.search' do
+    it "returns an array of foods" do
+      result = Esha::Food.search('beer')
+      result.size.should == 25
+      result.first.product.should == 'Anheuser-Busch'
+    end
+  end
+
   describe '#method_missing' do
     it "maps methods to attributes" do
       food = Esha::Food.new('id' => '1234', 'product' => 'Beer')
